@@ -14,14 +14,14 @@ RUN yum -y update && yum -y upgrade
 RUN yum -y groupinstall "Development Tools" && \
     yum -y install git which tar
 
-ENV RUBY_MAJOR 2.2
-ENV RUBY_VERSION 2.2.2
+ENV RUBY_MAJOR 1.9
+ENV RUBY_VERSION 1.9.3
 
 ## Intall Ruby
 # some of ruby's build scripts are written in ruby
 # we purge this later to make sure our final image uses what we just built
 RUN yum -y install libyaml-devel zlib-devel \
-    && curl -fSL -o ruby.tar.gz "http://ftp.ruby-lang.org/pub/ruby/2.2/ruby-2.2.2.tar.gz" \
+    && curl -fSL -o ruby.tar.gz "http://ftp.ruby-lang.org/pub/ruby/2.2/ruby-1.9.3.tar.gz" \
     && mkdir -p /usr/src/ruby \
     && tar -xzf ruby.tar.gz -C /usr/src/ruby --strip-components=1 \
     && rm ruby.tar.gz \
