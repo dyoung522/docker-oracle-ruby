@@ -3,8 +3,8 @@ FROM dyoung522/oraclelinux-dev
 
 MAINTAINER Donovan Young <dyoung522@gmail.com>
 
-ENV RUBY_MAJOR      1.9
-ENV RUBY_VERSION    1.9.3-p551
+ENV RUBY_MAJOR      2.2
+ENV RUBY_VERSION    2.2.2
 ENV RUBY_SOURCE_URL http://ftp.ruby-lang.org/pub/ruby/${RUBY_MAJOR}/ruby-${RUBY_VERSION}.tar.gz
 
 ## Intall Ruby
@@ -14,7 +14,6 @@ RUN yum -y -q install libreadline libreadline-dev \
                       zlib zlib-devel zlib1g-dev \
                       tar \
                       which && \
-
     yum -y -q clean all && \
     mkdir -p /usr/src/ruby && \
     curl -fSL -o ruby.tar.gz $RUBY_SOURCE_URL && \

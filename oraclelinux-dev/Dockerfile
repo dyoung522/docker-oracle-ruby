@@ -1,4 +1,4 @@
-FROM oraclelinux:6.6
+FROM oraclelinux
 
 MAINTAINER Donovan Young <dyoung522@gmail.com>
 
