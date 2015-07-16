@@ -1,5 +1,5 @@
 # OracleLinux running Ruby
-FROM dyoung522/oracle-linux-dev
+FROM dyoung522/oraclelinux-dev:6.6
 
 MAINTAINER Donovan Young <dyoung522@gmail.com>
 
