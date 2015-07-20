@@ -26,8 +26,8 @@ RUN yum -y -q install libreadline libreadline-dev \
     make install && \
     cd $HOME && rm -rf /usr/src/ruby
 
-ENV GEM_HOME /usr/local/bundle  # install gems globally
-ENV BUNDLE_APP_CONFIG $GEM_HOME # don't create ".bundle" in our apps
+ENV GEM_HOME /usr/local/bundle
+ENV BUNDLE_APP_CONFIG $GEM_HOME
 ENV PATH $GEM_HOME/bin:$PATH
 
 RUN echo 'gem: --no-rdoc --no-ri' >> "$HOME/.gemrc" && \
