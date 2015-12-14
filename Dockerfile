@@ -8,10 +8,12 @@ ENV RUBY_VERSION    2.2.2
 ENV RUBY_SOURCE_URL http://ftp.ruby-lang.org/pub/ruby/${RUBY_MAJOR}/ruby-${RUBY_VERSION}.tar.gz
 
 ## Intall Ruby
-RUN yum -y -q install libreadline libreadline-dev \
-                      libssl libssl-dev openssl openssl-devel libcurl4-openssl-dev \
+RUN yum -y -q install readline readline-devel \
+                      openssl openssl-devel \
                       libyaml libyaml-devel \
-                      zlib zlib-devel zlib1g-dev \
+                      zlib zlib-devel \
+                      gdbm-devel libffi-devel \
+                      ncurses-devel \
                       tar \
                       which && \
     yum -y -q clean all && \
@@ -38,4 +40,3 @@ RUN echo 'gem: --no-rdoc --no-ri' >> "$HOME/.gemrc" && \
 ## Metadata (put at the end so changes don't invalidate caches)
 LABEL Description="OracleLinux and Ruby ${RUBY_VERSION}" \
       Version="0.3.0"
-
